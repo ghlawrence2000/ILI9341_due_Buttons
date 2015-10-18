@@ -1,8 +1,6 @@
 // Ported to ILI9341_due by GHLawrence2000
 //
-// ghlawrence2000@yahoo.co.uk
-//
-// https://github.com/ghlawrence2000
+// https://github.com/ghlawrence2000/ILI9341_due_Buttons
 //
 // UTFT_Buttons_Demo_320x240
 // Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
@@ -15,8 +13,8 @@
 // of 320x240 pixels, but should work on larger screens as
 // well.
 //
-// This program requires both the UTFT and UTouch libraries
-// in addition to the UTFT_Buttons add-on library.
+// This program requires both the ILI9341_due and UTouch libraries
+// in addition to the ILI9341_due_Buttons add-on library.
 //
 #include <SPI.h>
 #include <ILI9341_due_config.h>
@@ -27,11 +25,6 @@
 
 #include <UTouch.h>
 #include <ILI9341_due_Buttons.h>
-
-// Declare which fonts we will be using
-//extern uint8_t SmallFont[];
-//extern uint8_t BigFont[];
-//extern uint8_t Dingbats1_XL[];
 
 // For the Adafruit shield, these are the default.
 #define TFT_RST 8
@@ -54,25 +47,18 @@ ILI9341_due tft = ILI9341_due(TFT_CS, TFT_DC, TFT_RST);
 //
 UTouch        myTouch(6, 5, 4, 3, 2);
 
-// Finally we set up UTFT_Buttons :)
+// Finally we set up ILI9341_due_Buttons :)
 ILI9341_due_Buttons  myButtons(&tft, &myTouch);
 
 void setup()
 {
-  //myGLCD.InitLCD();
-  //myGLCD.clrScr();
   Serial.begin(115200);
   // Initial setup
   tft.begin();
   tft.setRotation(iliRotation270);  // landscape
   tft.fillScreen(ILI9341_BLACK);
 
-  //myGLCD.setFont(SmallFont);
   tft.setFont(SmallFont);
-  //int fontx = tft.charWidth('a', SmallFont);
-  //int fonty = tft.fontHeight();
-  //Serial.println(fontx);
-  //Serial.println(fonty);
 
   myTouch.InitTouch();
   myTouch.setPrecision(PREC_MEDIUM);
@@ -95,8 +81,6 @@ void loop()
   myButtons.drawButtons();
 
   tft.printAt("You pressed:", 110, 205);
-  //myGLCD.setColor(VGA_BLACK);
-  //myGLCD.setBackColor(VGA_WHITE);
   tft.setTextColor(ILI9341_BLACK, ILI9341_WHITE);
   tft.printAt("None    ", 110, 220);
 
@@ -132,32 +116,27 @@ void loop()
       }
       if (pressed_button == but1)
       {
-        //myGLCD.print("Button 1", 110, 220);
         tft.printAt("Button 1", 110, 220);
         //Serial.println("Button 1");
       }
 
       if (pressed_button == but2)
       {
-        //myGLCD.print("Button 2", 110, 220);
         tft.printAt("Button 2", 110, 220);
         //Serial.println("Button 2");
       }
       if (pressed_button == but3)
       {
-        //myGLCD.print("Button 3", 110, 220);
         tft.printAt("Button 3", 110, 220);
         //Serial.println("Button 3");
       }
       if (pressed_button == but4)
       {
-        //myGLCD.print("Button 4", 110, 220);
         tft.printAt("Button 4", 110, 220);
         //Serial.println("Button 4");
       }
       if (pressed_button == -1)
       {
-        //myGLCD.print("None    ", 110, 220);
         tft.printAt("None    ", 110, 220);
       }
     }
