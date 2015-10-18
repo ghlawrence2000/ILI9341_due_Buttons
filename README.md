@@ -18,7 +18,7 @@ Speaking of display, had time not have been an issue I would have ordered from A
 Since time DID appear to be an issue, I ordered from everyone's 'friend' :- http://www.ebay.co.uk/itm/301713255980?_trksid=p2060353.m2749.l2649&ssPageName=STRK%3AMEBIDX%3AIT
 
 All that remains for me to say, is there is an issue I am aware of. This is outside my control until/if Marek is prepared to make changes to ILI9341_due.h?
-Please be aware the included ILI9341_due.h is a copy dated 29th September 2015. The changes involve removing three variable from Protected: and making then Public:
+Please be aware the included ILI9341_due.h is a copy dated 29th September 2015. The changes involve removing three variables from Protected: and making them Public: In other words :-
 
 Lines 457-459 :-
 
@@ -28,6 +28,6 @@ Lines 457-459 :-
 
 Need inserting at around line 754.
 
-The .h file in folder ILI9341_due_mod should be posted directly over the same file name in the Arduino\Libraries\ILI9341_due(-master) folder. 
+The .h file in folder ILI9341_due_mod should be pasted directly over the same file name in the Arduino\Libraries\ILI9341_due(-master) folder. 
 
 
