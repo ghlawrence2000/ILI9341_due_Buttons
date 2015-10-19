@@ -1,8 +1,8 @@
 // Ported to ILI9341_due by GHLawrence2000 (perfected by David Prentice)
 //
-// ghlawrence2000@yahoo.co.uk
+// https://github.com/ghlawrence2000/ILI9341_due_Buttons
 //
-// https://github.com/ghlawrence2000
+// http://forum.arduino.cc/index.php?action=profile;u=164638
 //
 /*
   ILI9341_due_Buttons.cpp - Add-on Library for UTFT: Buttons
@@ -101,9 +101,9 @@ void ILI9341_due_Buttons::drawButtons()
 void ILI9341_due_Buttons::drawButton(int buttonID)  //.kbv use wid, ht for Rect
 {
   int   text_x, text_y;
-  const unsigned char *_font_current = _ILI9341->_font;
-  word  _current_color = _ILI9341->_fontColor;
-  word  _current_back  = _ILI9341->_fontBgColor;
+  const unsigned char *_font_current = _ILI9341->getFont();
+  word  _current_color = _ILI9341->getTextColor();
+  word  _current_back  = _ILI9341->getTextBackgroundColor();
 
   if (buttons[buttonID].flags & BUTTON_BITMAP)
   {
@@ -129,21 +129,21 @@ void ILI9341_due_Buttons::drawButton(int buttonID)  //.kbv use wid, ht for Rect
     if (buttons[buttonID].flags & BUTTON_SYMBOL)
     {
       _ILI9341->setFont(_font_symbol);
-      text_x = (buttons[buttonID].width / 2) - (_ILI9341->charWidth('a', _font_symbol) / 2) + buttons[buttonID].pos_x;
-      text_y = (buttons[buttonID].height / 2) - (_ILI9341->fontHeight() / 2) + buttons[buttonID].pos_y;
+      text_x = (buttons[buttonID].width / 2) - (_ILI9341->getStringWidth(buttons[buttonID].label) / 2) + buttons[buttonID].pos_x;
+      text_y = (buttons[buttonID].height / 2) - (_ILI9341->getFontHeight() / 2) + buttons[buttonID].pos_y;
     }
     else
     {
       _ILI9341->setFont(_font_text);
-      text_x = (buttons[buttonID].width / 2) - (_ILI9341->stringWidth(buttons[buttonID].label) / 2) + buttons[buttonID].pos_x; //.kbv
-      text_y = (buttons[buttonID].height / 2) - (_ILI9341->fontHeight() / 2) + buttons[buttonID].pos_y;
+      text_x = (buttons[buttonID].width / 2) - (_ILI9341->getStringWidth(buttons[buttonID].label) / 2) + buttons[buttonID].pos_x; //.kbv
+      text_y = (buttons[buttonID].height / 2) - (_ILI9341->getFontHeight() / 2) + buttons[buttonID].pos_y;
     }
     //_UTFT->setBackColor(_color_background);
     _ILI9341->printAt(buttons[buttonID].label, text_x, text_y);
     if ((buttons[buttonID].flags & BUTTON_SYMBOL) and (buttons[buttonID].flags & BUTTON_SYMBOL_REP_3X))
     {
-      _ILI9341->printAt(buttons[buttonID].label, text_x - _ILI9341->charWidth('a', _font_symbol), text_y);
-      _ILI9341->printAt(buttons[buttonID].label, text_x + _ILI9341->charWidth('a', _font_symbol), text_y);
+      _ILI9341->printAt(buttons[buttonID].label, text_x - _ILI9341->getStringWidth(buttons[buttonID].label), text_y);
+      _ILI9341->printAt(buttons[buttonID].label, text_x + _ILI9341->getStringWidth(buttons[buttonID].label), text_y);
     }
   }
   _ILI9341->setFont(_font_current);       //???????????????

@@ -36,7 +36,7 @@
 #define Dingbats1_XL_H
 
 #define Dingbats1_XL_WIDTH 32
-#define Dingbats1_XL_HEIGHT 23
+#define Dingbats1_XL_HEIGHT 24
 
 /*
  * added to allow fontname to match header file name. 

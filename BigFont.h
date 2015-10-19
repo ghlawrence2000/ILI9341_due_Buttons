@@ -36,7 +36,7 @@
 #define BigFont_H
 
 #define BigFont_WIDTH 16
-#define BigFont_HEIGHT 15
+#define BigFont_HEIGHT 16
 
 /*
  * added to allow fontname to match header file name. 

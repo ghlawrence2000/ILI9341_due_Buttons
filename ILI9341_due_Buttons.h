@@ -1,8 +1,8 @@
 // Ported to ILI9341_due by GHLawrence2000
 //
-// ghlawrence2000@yahoo.co.uk
+// https://github.com/ghlawrence2000/ILI9341_due_Buttons
 //
-// https://github.com/ghlawrence2000
+// http://forum.arduino.cc/index.php?action=profile;u=164638
 //
 /*
   ILI9341_due_Buttons.h - Add-on Library for UTFT: Buttons
@@ -29,7 +29,7 @@
 #ifndef ILI9341_due_Buttons_h
 #define ILI9341_due_Buttons_h
 
-#define ILI9341_due_Buttons_VERSION	102
+#define ILI9341_due_Buttons_VERSION	10205
 
 #if defined(__AVR__)
 	#include "Arduino.h"

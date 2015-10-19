@@ -5,7 +5,7 @@
  *
  * File Name           : SmallFont.h
  * Date                : 12 Oct 2015
- * Font size in bytes  : 1146
+ * Font size in bytes  : 1526
  * Font width          : 8
  * Font height         : 12
  * Font first char     : 32
@@ -36,7 +36,7 @@
 #define SmallFont_H
 
 #define SmallFont_WIDTH 8
-#define SmallFont_HEIGHT 11
+#define SmallFont_HEIGHT 12
 
 /*
  * added to allow fontname to match header file name. 

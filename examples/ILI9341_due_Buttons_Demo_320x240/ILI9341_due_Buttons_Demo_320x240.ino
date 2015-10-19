@@ -2,6 +2,8 @@
 //
 // https://github.com/ghlawrence2000/ILI9341_due_Buttons
 //
+// http://forum.arduino.cc/index.php?action=profile;u=164638
+//
 // UTFT_Buttons_Demo_320x240
 // Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
 // web: http://www.RinkyDinkElectronics.com/
