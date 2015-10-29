@@ -8,6 +8,8 @@ Based on UTFT_Buttons (V1.02) by Henning Karlsen http://www.rinkydinkelectronics
 
 Converted by GHLawrence2000 with assistance and debugging kindly supplied by David_Prentice & TFTLCDCyg. BIG Thanks to you both!
 
+V1.02.06. This version modified to work with AVR - Thanks Borland for notifying me of this problem.
+
 V1.02.05. This version takes advantage of the new get* functions kindly provided by Marek. No longer requires the modified ILI9341_due.h file.
 
 V1.02.04. First Git Commit. Required modified version of ILI9341_due.h
