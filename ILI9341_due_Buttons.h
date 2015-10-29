@@ -29,12 +29,14 @@
 #ifndef ILI9341_due_Buttons_h
 #define ILI9341_due_Buttons_h
 
-#define ILI9341_due_Buttons_VERSION	10205
+#define ILI9341_due_Buttons_VERSION	10206
 
 #if defined(__AVR__)
 	#include "Arduino.h"
+	#include "hardware/avr/HW_AVR_defines.h"
 #elif defined(__PIC32MX__)
 	#include "WProgram.h"
+	#include "hardware/pic32/HW_PIC32_defines.h"
 #elif defined(__arm__)
 	#include "Arduino.h" // This will include energia.h where appropriate
 	#include "hardware/arm/HW_ARM_defines.h"

@@ -18,8 +18,8 @@
 // This demo will not work on Arduino 2009/Uno/Leonardo
 // due to the size of the images.
 //
-// This program requires both the UTFT and UTouch libraries
-// in addition to the UTFT_Buttons add-on library.
+// This program requires both the ILI9341_due and UTouch libraries
+// in addition to the ILI9341_due_Buttons add-on library.
 //
 
 // This code block is only needed to support multiple
