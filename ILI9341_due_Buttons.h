@@ -43,7 +43,7 @@
 #endif
 
 #include <ILI9341_due.h>
-#include <UTouch.h>
+#include <URTouch.h>
 
 #define MAX_BUTTONS	20	// Maximum number of buttons available at one time
 
