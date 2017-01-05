@@ -9,7 +9,7 @@
   Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
   
   This library adds simple but easy to use buttons to extend the use
-  of the UTFT and UTouch libraries.
+  of the UTFT and URTouch libraries.
 
   You can find the latest version of the library at 
   http://www.RinkyDinkElectronics.com/
@@ -66,7 +66,7 @@ typedef struct
 class ILI9341_due_Buttons
 {
 	public:
-		ILI9341_due_Buttons(ILI9341_due *ptrILI9341, UTouch *ptrUTouch);
+		ILI9341_due_Buttons(ILI9341_due *ptrILI9341, URTouch *ptrURTouch);
 
 		int		addButton(uint16_t x, uint16_t y, uint16_t width, uint16_t height, char *label, uint16_t flags=0);
 		int		addButton(uint16_t x, uint16_t y, uint16_t width, uint16_t height, bitmapdatatype data, uint16_t flags=0);
@@ -85,7 +85,7 @@ class ILI9341_due_Buttons
 		
 	protected:
 		ILI9341_due *_ILI9341;
-		UTouch		*_UTouch;
+		URTouch		*_URTouch;
 		button_type	buttons[MAX_BUTTONS];
 		word		_color_text, _color_text_inactive, _color_background, _color_border, _color_hilite;
 		const uint8_t		*_font_text, *_font_symbol;

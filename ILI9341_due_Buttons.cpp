@@ -9,7 +9,7 @@
   Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
 
   This library adds simple but easy to use buttons to extend the use
-  of the UTFT and UTouch libraries.
+  of the UTFT and URTouch libraries.
 
   You can find the latest version of the library at
   http://www.RinkyDinkElectronics.com/
@@ -26,14 +26,14 @@
   examples and tools supplied with the library.
 */
 
-#include "ILI9341_due_Buttons.h"    //.kbv defines UTouch_SPI
+#include "ILI9341_due_Buttons.h"    //.kbv defines URTouch_SPI
 #include <ILI9341_due.h>
 #include <URTouch.h>
 
-ILI9341_due_Buttons::ILI9341_due_Buttons(ILI9341_due *ptrILI9341, UTouch *ptrUTouch)
+ILI9341_due_Buttons::ILI9341_due_Buttons(ILI9341_due *ptrILI9341, URTouch *ptrURTouch)
 {
   _ILI9341 = ptrILI9341;
-  _UTouch = ptrUTouch;
+  _URTouch = ptrURTouch;
   deleteAllButtons();
   _color_text       = ILI9341_WHITE;
   _color_text_inactive  = ILI9341_GRAY;
@@ -207,12 +207,12 @@ void ILI9341_due_Buttons::deleteAllButtons()
 
 int ILI9341_due_Buttons::checkButtons()
 {
-  if (_UTouch->dataAvailable() == true)
+  if (_URTouch->dataAvailable() == true)
   {
-    _UTouch->read();
+    _URTouch->read();
     int   result = -1;
-    int   touch_x = _UTouch->getX();
-    int   touch_y = _UTouch->getY();
+    int   touch_x = _URTouch->getX();
+    int   touch_y = _URTouch->getY();
     //word  _current_color = _UTFT->getColor(); ???????????????????????
 
     for (int i = 0; i < MAX_BUTTONS; i++)
@@ -235,7 +235,7 @@ int ILI9341_due_Buttons::checkButtons()
       }
     }
 
-    while (_UTouch->dataAvailable() == true) {};
+    while (_URTouch->dataAvailable() == true) {};
 
     if (result != -1)
     {
