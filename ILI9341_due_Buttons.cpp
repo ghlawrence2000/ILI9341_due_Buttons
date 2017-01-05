@@ -28,7 +28,7 @@
 
 #include "ILI9341_due_Buttons.h"    //.kbv defines UTouch_SPI
 #include <ILI9341_due.h>
-#include <UTouch.h>
+#include <URTouch.h>
 
 ILI9341_due_Buttons::ILI9341_due_Buttons(ILI9341_due *ptrILI9341, UTouch *ptrUTouch)
 {
